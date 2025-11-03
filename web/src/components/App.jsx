@@ -1,10 +1,13 @@
 import '../css/App.css'
 function App() {
-  //javascript
+  fetch(`${import.meta.env.VITE_APP_BASE_URL}/api/client`)
+  .then(res => res.json())
+  .then(data => console.log(data))
+
   return (
     <>
       <h1>Titulo de la web</h1>
-      <a href="http://localhost:5000/api/plantilla" target='_blank'>Ir al motor de la plantilla</a>
+      <a href={`${import.meta.env.VITE_APP_BASE_URL}/api/plantilla`} target='_blank'>Ir al motor de la plantilla</a>
     </>
   )
 }
